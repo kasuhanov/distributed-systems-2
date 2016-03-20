@@ -1,19 +1,47 @@
 package ru.kasuhanov.model;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 public class TestData implements Serializable {
-    public String name;
-    public long age;
-    public double salary;
-    public boolean[] booleen;
-    public Map<String,String> bigIntegerStringMap = new HashMap<>();
+    private String name;
+    private long age;
+    private double salary;
+    private boolean[] booleen;
+    private List<Date> dates = new ArrayList<>();
+    private Map<String,String> bigIntegerStringMap = new HashMap<>();
+    private Set<Character> chars = new HashSet<>();
 
     public TestData() {
+        chars.add('a');
+        chars.add('g');
+        chars.add('s');
+        chars.add('j');
+        chars.add('k');
+        chars.add('y');
+        chars.add('t');
+        chars.add('r');
+        chars.add('n');
+        chars.add('9');
+        age = 523423423;
+        name = "werwersigfsdifnkjsdfngkjsdnfgknsdjfgsjdfngnsdfgj";
+        salary = 134567890987654323456789123123123123123123123.12312312312312312312312312534237216378123;
+        booleen = new boolean[]{true, false, true, false, false};
+        bigIntegerStringMap.put("qwe","odin");
+        bigIntegerStringMap.put("ssdf","dva");
+        bigIntegerStringMap.put("asdfasfa","tri");
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
+        dates.add(new Date());
     }
 
     public String getName() {
@@ -54,6 +82,22 @@ public class TestData implements Serializable {
 
     public void setBigIntegerStringMap(Map<String, String> bigIntegerStringMap) {
         this.bigIntegerStringMap = bigIntegerStringMap;
+    }
+
+    public List<Date> getDates() {
+        return dates;
+    }
+
+    public void setDates(List<Date> dates) {
+        this.dates = dates;
+    }
+
+    public Set<Character> getChars() {
+        return chars;
+    }
+
+    public void setChars(Set<Character> chars) {
+        this.chars = chars;
     }
 
     @Override
