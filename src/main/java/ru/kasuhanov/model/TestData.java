@@ -12,7 +12,7 @@ public class TestData implements Serializable {
     public long age;
     public double salary;
     public boolean[] booleen;
-    public Map<Character,String> bigIntegerStringMap = new HashMap<>();
+    public Map<String,String> bigIntegerStringMap = new HashMap<>();
 
     public TestData() {
     }
@@ -49,11 +49,11 @@ public class TestData implements Serializable {
         this.booleen = booleen;
     }
 
-    public Map<Character, String> getBigIntegerStringMap() {
+    public Map<String, String> getBigIntegerStringMap() {
         return bigIntegerStringMap;
     }
 
-    public void setBigIntegerStringMap(Map<Character, String> bigIntegerStringMap) {
+    public void setBigIntegerStringMap(Map<String, String> bigIntegerStringMap) {
         this.bigIntegerStringMap = bigIntegerStringMap;
     }
 

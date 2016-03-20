@@ -20,11 +20,11 @@ public class Application{
         testData.setName("werwersigfsdifnkjsdfngkjsdnfgknsdjfgsjdfngnsdfgj");
         testData.setSalary(134567890987654323456789123123123123123123123.12312312312312312312312312534237216378123);
         testData.setBooleen(new boolean[]{true, false, true, false, false});
-        testData.getBigIntegerStringMap().put('1',"odin");
-        testData.getBigIntegerStringMap().put('2',"dva");
-        testData.getBigIntegerStringMap().put('3',"tri");
+        testData.getBigIntegerStringMap().put("qwe","odin");
+        testData.getBigIntegerStringMap().put("ssdf","dva");
+        testData.getBigIntegerStringMap().put("asdfasfa","tri");
 
-        List<ISerializer> serializers = Arrays.asList(new NativeSerialazer(), new XmlSerialazer(),
+        List<ISerializer> serializers = Arrays.asList(new NativeSerialazer(), new XmlSerialazer(), new JacksonXmlSerialazer(),
                 new YamlSerialazer(), new JsonSerialazer(), new MessagePackSerialazer());
 
         for(ISerializer serializer:serializers){
