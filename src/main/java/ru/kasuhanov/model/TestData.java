@@ -1,7 +1,6 @@
 package ru.kasuhanov.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;

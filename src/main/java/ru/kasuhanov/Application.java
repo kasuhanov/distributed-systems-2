@@ -1,13 +1,8 @@
 package ru.kasuhanov;
 
-import com.esotericsoftware.yamlbeans.YamlReader;
-import com.esotericsoftware.yamlbeans.YamlWriter;
 import ru.kasuhanov.model.TestData;
 import ru.kasuhanov.serializer.*;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,8 +19,8 @@ public class Application{
         testData.getBigIntegerStringMap().put("ssdf","dva");
         testData.getBigIntegerStringMap().put("asdfasfa","tri");
 
-        List<ISerializer> serializers = Arrays.asList(new NativeSerialazer(), new XmlSerialazer(), new JacksonXmlSerialazer(),
-                new YamlSerialazer(), new JsonSerialazer(), new MessagePackSerialazer());
+        List<ISerializer> serializers = Arrays.asList(new NativeSerialazer(), new XmlSerialazer(),
+                new JsonSerialazer(), new MessagePackSerialazer(), new YamlSerialazer());
 
         for(ISerializer serializer:serializers){
             List<Long> serTime = new ArrayList<>();
@@ -42,6 +37,6 @@ public class Application{
             System.out.println("serialization average value: "+serTime.stream().mapToLong(t->t).average());
             System.out.println("deserialization average value: "+deserTime.stream().mapToLong(t->t).average());
             System.out.println("size: "+serializer.getFileLength());
-        };
+        }
     }
 }

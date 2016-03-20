@@ -3,7 +3,8 @@ package ru.kasuhanov.serializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ru.kasuhanov.model.TestData;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 public class JsonSerialazer implements ISerializer {
     private String filename = "test.json";

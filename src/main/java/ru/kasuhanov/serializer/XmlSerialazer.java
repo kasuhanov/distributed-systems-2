@@ -1,17 +1,22 @@
 package ru.kasuhanov.serializer;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import ru.kasuhanov.model.TestData;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 public class XmlSerialazer implements ISerializer {
     private String filename = "test.xml";
     @Override
     public TestData deserialize() throws IOException, ClassNotFoundException {
-        XMLDecoder decoder=new XMLDecoder(new BufferedInputStream(new FileInputStream(filename)));
-        return (TestData)decoder.readObject();
+        XmlMapper mapper = new XmlMapper();
+        return mapper.readValue(new File(filename), TestData.class);
+    }
+
+    @Override
+    public String getName() {
+        return "XML Serializer";
     }
 
     @Override
@@ -20,14 +25,8 @@ public class XmlSerialazer implements ISerializer {
     }
 
     @Override
-    public String getName() {
-        return "Xml Serializer";
-    }
-
-    @Override
     public void serialize(TestData data) throws IOException {
-        XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(filename)));
-        encoder.writeObject(data);
-        encoder.close();
+        XmlMapper mapper = new XmlMapper();
+        mapper.writeValue(new File(filename), data);
     }
 }
