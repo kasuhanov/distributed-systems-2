@@ -25,7 +25,7 @@ public class Application{
         testData.getBigIntegerStringMap().put('3',"tri");
 
         List<ISerializer> serializers = Arrays.asList(new NativeSerialazer(), new XmlSerialazer(),
-                new YamlSerialazer(), new JsonSerialazer());
+                new YamlSerialazer(), new JsonSerialazer(), new MessagePackSerialazer());
 
         for(ISerializer serializer:serializers){
             List<Long> serTime = new ArrayList<>();
